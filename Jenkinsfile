@@ -16,7 +16,7 @@ pipeline{
         stage('Deploy') {
             steps {
 
-                sh "$(which aws) s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://ust-john3179"
+                sh "which aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://ust-john3179"
             }
                     }
         stage('Report') {
