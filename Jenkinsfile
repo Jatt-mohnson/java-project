@@ -1,1 +1,3 @@
-ant
+pipeline {
+    ant
+}
