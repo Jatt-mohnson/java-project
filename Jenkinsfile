@@ -15,8 +15,7 @@ pipeline{
         }
         stage('Deploy') {
             steps {
-                sh 'whereis aws'
-                sh "aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://ust-john3179"
+                sh "/usr/local/bin/aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://ust-john3179"
             }
                     }
         stage('Report') {
