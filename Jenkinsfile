@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Unit Tests') {
             steps {
-                ant -f test.xml -v
+                ant -f 'test.xml' -v
             }
         }
         stage('Build') {
