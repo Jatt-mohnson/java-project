@@ -15,7 +15,6 @@ pipeline{
         }
         stage('Deploy') {
             steps {
-                sh "sudo yum install aws"
                 sh "aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://ust-john3179"
             }
                     }
