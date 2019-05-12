@@ -7,7 +7,7 @@ node('linux') {
 	}   
 	stage('Build') {    
 		sh 'ant -f build.xml -v'   
-		sh 'aws cloudformation create-stack --stack-name myteststack --template-url https://s3.amazonaws.com/seis665/jenkins-cf.json --parameters ParameterKey=JenkinsPassword,ParameterValue=test1 ParameterKey=JenkinsSlaveNum,ParameterValue=1'
+		sh 'aws cloudformation create-stack aws --region us-west-1 --stack-name myteststack --template-url https://s3.amazonaws.com/seis665/jenkins-cf.json --parameters ParameterKey=JenkinsPassword,ParameterValue=test1 ParameterKey=JenkinsSlaveNum,ParameterValue=1'
 	}   
 	stage('Deploy') {    
 		sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle-${BUILD_NUMBER}.jar s3://ust-john3179/'
